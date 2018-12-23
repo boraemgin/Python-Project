@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 '''
 AIRFOILS THAT CANNOT OPENED
 '''
-cannotopened_ = []
+cannotopen = []
 def get_good_files (filename):
         
     try :
@@ -19,11 +19,11 @@ def get_good_files (filename):
             content = f.readlines()
     
     except:
-        cannotopened_.append(filename)
+        cannotopened.append(filename)
         print(filename, 'can not be opened')
         time.sleep(0.5)
         
-    return cannotopened_
+    return cannotopen
     
 for i, j, k in os.walk("coord_seligFmt/") :
     
@@ -49,7 +49,7 @@ def get_foil_coordinates(filename):
                 pass
     return np.array(arr)
 for i,j,k in os.walk('coord_seligFmt/'):
-    k = [n for n in k if n not in cannotopened_];  
+    k = [n for n in k if n not in cannotopen];  
     for i,j in enumerate(k):       
         filename = 'coord_seligFmt/' + j
         foil = get_foil_coordinates(filename)
