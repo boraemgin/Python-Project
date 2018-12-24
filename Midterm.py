@@ -147,4 +147,4 @@ for i,j,k in os.walk('coord_seligFmt/'):
         plt.legend()
         plt.show()
         
-#        time.sleep(0.1)
+        time.sleep(0.1)
