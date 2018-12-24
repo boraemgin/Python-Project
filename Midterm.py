@@ -138,7 +138,7 @@ for i,j,k in os.walk('coord_seligFmt/'):
         plt.plot([max(x),foil[0,1]],[min(x),foil[location[0],1]],label='Chord Line') #because chord line is a straight line that is from airfoils leading edge to trailing edge
         plt.plot(np.linspace(min(x),max(x),len(camber)),camber,label='Mean Camber Line')
         plt.vlines(x = (foil[len(thicknesses)+int(maxthicknesslocation[0]),0]),ymin=down[maxthicknesslocation[0]],ymax=up[maxthicknesslocation[0]],label='Maximum Thickness')
-        print('Location of maximum thickness is ',(thicknesses[maxthicknesslocation[0]]))
+        print('Length of maximum thickness is ',(thicknesses[maxthicknesslocation[0]]),' and the x location of maximum thickness is ', x[location[0]+maxthicknesslocation[0]])
         plt.quiver(a,b,u,v)
         Kutta_condition(a,b)
         plt.plot()
